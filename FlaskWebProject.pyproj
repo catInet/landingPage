@@ -18,6 +18,12 @@
     <PythonWsgiHandler>$(MSBuildProjectName).app</PythonWsgiHandler>
     <Name>FlaskWebProject</Name>
     <RootNamespace>FlaskWebProject</RootNamespace>
+    <PythonDebugWebServerCommandEnvironment>REPOSITORY_NAME=azuretablestorage
+STORAGE_NAME=kotinternet
+STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0+lgprqnf6g4jfj75iw==</PythonDebugWebServerCommandEnvironment>
+    <NameOfLastUsedPublishProfile>catInternetPreview</NameOfLastUsedPublishProfile>
+    <InterpreterId>{2ccfe346-5741-45ef-82e0-5086f8c45787}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +34,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlaskWebProject\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="FlaskWebProject\__init__.py" />
     <Compile Include="FlaskWebProject\views.py" />
@@ -36,40 +48,84 @@
     <Folder Include="FlaskWebProject\" />
     <Folder Include="FlaskWebProject\static\" />
     <Folder Include="FlaskWebProject\static\content\" />
-    <Folder Include="FlaskWebProject\static\fonts\" />
-    <Folder Include="FlaskWebProject\static\scripts\" />
-    <Folder Include="FlaskWebProject\templates\" />
+    <Folder Include="FlaskWebProject\static\content\pics\" />
+    <Folder Include="FlaskWebProject\static\pics\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="catInternetPreview.pubxml" />
+    <Content Include="FlaskWebProject\static\content\pics\7AUx4zlOyYY.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\a1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\back.jpeg" />
+    <Content Include="FlaskWebProject\static\content\pics\back.xcf" />
+    <Content Include="FlaskWebProject\static\content\pics\back_1.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_2.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_3.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_blackwhite.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_blackwhite_black.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_blackwhite_white.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_pink.png" />
+    <Content Include="FlaskWebProject\static\content\pics\band.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\band1_1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\band2_1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\band3_1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\i1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\n1.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\p72BJbUBrLo.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\stickers.facecam.ru_63x128.png" />
+    <Content Include="FlaskWebProject\static\content\pics\stickers.facecam.ru_63x256.png" />
+    <Content Include="FlaskWebProject\static\content\pics\stickers.facecam.ru_63x512.png" />
+    <Content Include="FlaskWebProject\static\content\pics\stickers.facecam.ru_63x64.png" />
+    <Content Include="FlaskWebProject\static\content\pics\techstart.png" />
+    <Content Include="FlaskWebProject\static\content\pics\VPtlvkzQYwU.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\VY4Ar7BQBzY.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\Wzwk2lETnxU.jpg" />
+    <Content Include="FlaskWebProject\static\content\pics\XE50CMYfuI8.jpg" />
+    <Content Include="FlaskWebProject\static\content\style.css" />
+    <Content Include="FlaskWebProject\static\index.html" />
+    <Content Include="FlaskWebProject\static\pics\7AUx4zlOyYY.jpg" />
+    <Content Include="FlaskWebProject\static\pics\a1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\back.jpeg" />
+    <Content Include="FlaskWebProject\static\pics\back.xcf" />
+    <Content Include="FlaskWebProject\static\pics\back_1.png" />
+    <Content Include="FlaskWebProject\static\pics\back_2.png" />
+    <Content Include="FlaskWebProject\static\pics\back_3.png" />
+    <Content Include="FlaskWebProject\static\pics\back_blackwhite.png" />
+    <Content Include="FlaskWebProject\static\pics\back_blackwhite_black.png" />
+    <Content Include="FlaskWebProject\static\pics\back_blackwhite_white.png" />
+    <Content Include="FlaskWebProject\static\pics\back_pink.png" />
+    <Content Include="FlaskWebProject\static\pics\band.jpg" />
+    <Content Include="FlaskWebProject\static\pics\band1_1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\band2_1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\band3_1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\i1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\n1.jpg" />
+    <Content Include="FlaskWebProject\static\pics\p72BJbUBrLo.jpg" />
+    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x128.png" />
+    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x256.png" />
+    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x512.png" />
+    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x64.png" />
+    <Content Include="FlaskWebProject\static\pics\techstart.png" />
+    <Content Include="FlaskWebProject\static\pics\VPtlvkzQYwU.jpg" />
+    <Content Include="FlaskWebProject\static\pics\VY4Ar7BQBzY.jpg" />
+    <Content Include="FlaskWebProject\static\pics\Wzwk2lETnxU.jpg" />
+    <Content Include="FlaskWebProject\static\pics\XE50CMYfuI8.jpg" />
+    <Content Include="FlaskWebProject\static\style.css" />
     <Content Include="requirements.txt" />
-    <Content Include="FlaskWebProject\static\content\bootstrap.css" />
-    <Content Include="FlaskWebProject\static\content\bootstrap.min.css" />
-    <Content Include="FlaskWebProject\static\content\site.css" />
-    <Content Include="FlaskWebProject\static\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="FlaskWebProject\static\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="FlaskWebProject\static\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="FlaskWebProject\static\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="FlaskWebProject\static\scripts\bootstrap.js" />
-    <Content Include="FlaskWebProject\static\scripts\bootstrap.min.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery-1.10.2.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery-1.10.2.min.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery-1.10.2.min.map" />
-    <Content Include="FlaskWebProject\static\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery.validate.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery.validate.min.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="FlaskWebProject\static\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="FlaskWebProject\static\scripts\modernizr-2.6.2.js" />
-    <Content Include="FlaskWebProject\static\scripts\respond.js" />
-    <Content Include="FlaskWebProject\static\scripts\respond.min.js" />
-    <Content Include="FlaskWebProject\static\scripts\_references.js" />
-    <Content Include="FlaskWebProject\templates\about.html" />
-    <Content Include="FlaskWebProject\templates\contact.html" />
-    <Content Include="FlaskWebProject\templates\index.html" />
-    <Content Include="FlaskWebProject\templates\layout.html" />
     <Content Include="web.config" />
     <Content Include="web.debug.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>{2ccfe346-5741-45ef-82e0-5086f8c45787}</Id>
+      <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
+      <Version>2.7</Version>
+      <Description>env1 (Python 64-bit 2.7)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>Amd64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
