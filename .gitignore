@@ -22,6 +22,8 @@ __pycache__/
 
 # Windows image file caches
 Thumbs.db
+
+config.py
 ehthumbs.db
 
 # Folder config file

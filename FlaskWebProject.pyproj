@@ -21,8 +21,8 @@
     <PythonDebugWebServerCommandEnvironment>REPOSITORY_NAME=azuretablestorage
 STORAGE_NAME=kotinternet
 STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0+lgprqnf6g4jfj75iw==</PythonDebugWebServerCommandEnvironment>
-    <NameOfLastUsedPublishProfile>catInternetPreview</NameOfLastUsedPublishProfile>
-    <InterpreterId>{2ccfe346-5741-45ef-82e0-5086f8c45787}</InterpreterId>
+    <NameOfLastUsedPublishProfile>catinet</NameOfLastUsedPublishProfile>
+    <InterpreterId>{5ad25790-8fec-42dd-aefc-43d61d371f95}</InterpreterId>
     <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -40,6 +40,12 @@ STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0
     <Compile Include="FlaskWebProject\forms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FlaskWebProject\MLTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlaskWebProject\setTestMasterForCat.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="FlaskWebProject\__init__.py" />
     <Compile Include="FlaskWebProject\views.py" />
@@ -49,10 +55,12 @@ STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0
     <Folder Include="FlaskWebProject\static\" />
     <Folder Include="FlaskWebProject\static\content\" />
     <Folder Include="FlaskWebProject\static\content\pics\" />
-    <Folder Include="FlaskWebProject\static\pics\" />
+    <Folder Include="FlaskWebProject\templates\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="catInternetPreview.pubxml" />
+    <None Include="catInternet.pubxml" />
+    <None Include="catinet.pubxml" />
     <Content Include="FlaskWebProject\static\content\pics\7AUx4zlOyYY.jpg" />
     <Content Include="FlaskWebProject\static\content\pics\a1.jpg" />
     <Content Include="FlaskWebProject\static\content\pics\back.jpeg" />
@@ -62,6 +70,7 @@ STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0
     <Content Include="FlaskWebProject\static\content\pics\back_3.png" />
     <Content Include="FlaskWebProject\static\content\pics\back_blackwhite.png" />
     <Content Include="FlaskWebProject\static\content\pics\back_blackwhite_black.png" />
+    <Content Include="FlaskWebProject\static\content\pics\back_blackwhite_black_small.png" />
     <Content Include="FlaskWebProject\static\content\pics\back_blackwhite_white.png" />
     <Content Include="FlaskWebProject\static\content\pics\back_pink.png" />
     <Content Include="FlaskWebProject\static\content\pics\band.jpg" />
@@ -81,50 +90,22 @@ STORAGE_KEY=IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0
     <Content Include="FlaskWebProject\static\content\pics\Wzwk2lETnxU.jpg" />
     <Content Include="FlaskWebProject\static\content\pics\XE50CMYfuI8.jpg" />
     <Content Include="FlaskWebProject\static\content\style.css" />
-    <Content Include="FlaskWebProject\static\index.html" />
-    <Content Include="FlaskWebProject\static\pics\7AUx4zlOyYY.jpg" />
-    <Content Include="FlaskWebProject\static\pics\a1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\back.jpeg" />
-    <Content Include="FlaskWebProject\static\pics\back.xcf" />
-    <Content Include="FlaskWebProject\static\pics\back_1.png" />
-    <Content Include="FlaskWebProject\static\pics\back_2.png" />
-    <Content Include="FlaskWebProject\static\pics\back_3.png" />
-    <Content Include="FlaskWebProject\static\pics\back_blackwhite.png" />
-    <Content Include="FlaskWebProject\static\pics\back_blackwhite_black.png" />
-    <Content Include="FlaskWebProject\static\pics\back_blackwhite_white.png" />
-    <Content Include="FlaskWebProject\static\pics\back_pink.png" />
-    <Content Include="FlaskWebProject\static\pics\band.jpg" />
-    <Content Include="FlaskWebProject\static\pics\band1_1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\band2_1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\band3_1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\i1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\n1.jpg" />
-    <Content Include="FlaskWebProject\static\pics\p72BJbUBrLo.jpg" />
-    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x128.png" />
-    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x256.png" />
-    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x512.png" />
-    <Content Include="FlaskWebProject\static\pics\stickers.facecam.ru_63x64.png" />
-    <Content Include="FlaskWebProject\static\pics\techstart.png" />
-    <Content Include="FlaskWebProject\static\pics\VPtlvkzQYwU.jpg" />
-    <Content Include="FlaskWebProject\static\pics\VY4Ar7BQBzY.jpg" />
-    <Content Include="FlaskWebProject\static\pics\Wzwk2lETnxU.jpg" />
-    <Content Include="FlaskWebProject\static\pics\XE50CMYfuI8.jpg" />
-    <Content Include="FlaskWebProject\static\style.css" />
+    <Content Include="FlaskWebProject\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="web.config" />
     <Content Include="web.debug.config" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env1\">
-      <Id>{2ccfe346-5741-45ef-82e0-5086f8c45787}</Id>
-      <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
+    <Interpreter Include="env\">
+      <Id>{5ad25790-8fec-42dd-aefc-43d61d371f95}</Id>
+      <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
       <Version>2.7</Version>
-      <Description>env1 (Python 64-bit 2.7)</Description>
+      <Description>env (Python 2.7)</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <LibraryPath>Lib\</LibraryPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>Amd64</Architecture>
+      <Architecture>X86</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

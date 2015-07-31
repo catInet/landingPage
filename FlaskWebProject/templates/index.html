@@ -3,7 +3,10 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="style.css" />
+       <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href="/static/content/style.css" />
       <style> 
           {{hiden_block}}{
               display: none;
@@ -22,6 +25,14 @@
        <div id="main">
             <strong>Привет! Мы делаем интернет для котиков</strong>
        </div>
+       <div id="header-mobile">
+           <ul>
+               <li><a href="#goal">что</a></li>
+               <li><a href="#purpose">зачем</a></li>
+               <li><a href="#wright-us">напиши нам</a></li>
+               <li><a href="#techstart">техностарт</a></li>
+           </ul>
+       </div>
        <div id="goal">
             <div id="goal-inner-wrapper">
             <div id="top">
@@ -30,9 +41,9 @@
                  <p id="goal-3">Он знает, чем твой питомец занят и постит от его имени в соц. сетях.</p>
             </div>
             <div id="band-pics">
-                 <img id="img-1" src="pics/band3_1.jpg"/>
-                 <img id="img-2" src="pics/band1_1.jpg"/>
-                 <img id="img-3"src="pics/band2_1.jpg"/>  
+                <img id="img-1" src="/static/content/pics/band3_1.jpg" />
+                <img id="img-2" src="/static/content/pics/band1_1.jpg" />
+                <img id="img-3" src="/static/content/pics/band2_1.jpg" />  
             </div>
             <div id="bottom">
                 Всегда хотел знать,  о чем мяукает твой кот? – Мы расскажем, что у него на уме.
@@ -53,13 +64,13 @@
        </div>
        <div id="wright-us">
            <div id="wright-us-wrapper">
-            <p id="wright-us-title">Интересно? Пиши нам!</p>
-               <form action="#got-ur-message" method="post">
+            <p class="wright-us-title-class "id="wright-us-title">Интересно? Напиши!</p>
+               <form id="wright-us-form" action="#got-ur-message" method="post">
                    {{form.csrf_token}}
-                   <p id="user-name"><div class="label">Имя</div> <input class="one-line-input" type="text" name="name"></p>
-                   <p id="user-email"><div class="label">Почта</div> <input class="one-line-input" type="email" name="email"></p>
-                   <p id="user-query"><textarea name="query"></textarea></p>
-                   <p id="button"><button type="submit">НАПИСАТЬ</button></p>
+                   <div class="input-wrapper" id="user-name"><div class="label">Имя</div> <input class="one-line-input" type="text" name="name"></div>
+                   <div class="input-wrapper" id="user-email"><div class="label">Почта</div><input class="one-line-input" type="email" name="email"></div>
+                   <div class="input-wrapper" id="user-query"><textarea name="query"></textarea></div>
+                   <div id="button"><button type="submit">НАПИСАТЬ</button></div>
                </form>
             </div>
        </div>

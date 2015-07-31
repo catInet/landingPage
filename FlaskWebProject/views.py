@@ -2,6 +2,7 @@
 Routes and views for the flask application.
 """
 import datetime
+import config
 from flask import render_template, request, url_for
 from FlaskWebProject import app
 from forms import MessageForm
@@ -14,8 +15,8 @@ def home():
     form = MessageForm(request.form)
     if request.method == 'POST' and form.validate():
         #Save to db
-        table_service = TableService(account_name='kotinternet', 
-                                     account_key='IBUYL+wZCeSOXxl9k8Z11QmCo6XZexbImsMzZW2IQL/ngfyAM+pfFENNz+T8/m8c3Dx0+lgprqnf6g4jfj75iw==')
+        table_service = TableService(account_name=config.ACC_NAME, 
+                                     account_key=config.ACC_KEY)
         message = {'PartitionKey': 'message', 
                    'RowKey': form.name.data + datetime.datetime.now().isoformat(), 
                    'name' : form.name.data,
